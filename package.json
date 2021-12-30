@@ -1,10 +1,9 @@
 {
-  "name": "bot",
+  "name": "typically_bot",
   "version": "1.0.0",
-  "description": "The Discord companion made for you.",
   "private": true,
   "scripts": {
-    "start": "purplet build && node dist/bot.mjs",
+    "start": "purplet run",
     "dev": "purplet dev",
     "build": "purplet dev"
   },
