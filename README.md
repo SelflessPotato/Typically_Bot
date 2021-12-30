@@ -11,6 +11,7 @@ through the Discord Developer Portal. It should be created with the following pe
 
 - Send Messages
 - Read Message History
+- `applications.commands` scope
 
 You will also need a Discord server to test your bot in. Instructions on creating
 a bot on the portal and inviting it to your test server should be easily found
@@ -28,4 +29,4 @@ then set up and run the bot itself:
 5. Edit your .env file with the bot's token, found in the Discord Developer Portal.
 6. Run the bot with `npm start`.
 
-[1]:https://discord.gg/cxBrH93Jtb
+[1]: https://discord.gg/cxBrH93Jtb
