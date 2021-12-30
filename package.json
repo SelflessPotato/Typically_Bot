@@ -1,16 +1,22 @@
 {
-  "name": "typically_bot",
+  "name": "bot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The Discord companion made for you.",
+  "private": true,
   "scripts": {
-    "start": "node src/main.js"
+    "start": "purplet build && node dist/bot.mjs",
+    "dev": "purplet dev",
+    "build": "purplet dev"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.6.4",
-    "dotenv": "^10.0.0"
+    "purplet": "^1.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "prettier": "^2.4.1",
+    "prettier-plugin-jsdoc": "^0.3.24",
+    "prettier-plugin-organize-imports": "^2.3.4"
   }
 }

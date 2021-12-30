@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             name: "typically_bot",
-            script: "src\\main.js",
+            script: "dist\\bot.mjs",
             env: {
                 NODE_ENV: "development"
             },
