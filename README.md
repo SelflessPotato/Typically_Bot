@@ -1,6 +1,6 @@
 # Typically_Bot
 
-Hello friendos! This repo contains the code to the Typically_Bot Discord bot,
+Henlo friendos! This repo contains the code to the Typically_Bot Discord bot,
 used on the [CommuniTree Discord server][1]. If you have any suggestions,
 feel free to either create an issue here or message SelflessPotato#0102 on Discord!
 
@@ -16,7 +16,8 @@ through the Discord Developer Portal. It should be created with the following pe
 You will also need a Discord server to test your bot in. Instructions on creating
 a bot on the portal and inviting it to your test server should be easily found
 on Google, and, as such, are not replicated here. Be sure to note your bot's token, as
-you will need it when setting up your .env file.
+you will need it when setting up your .env file. Your server should also be set up
+with a channel for admin messages and a role to ping when errors occur.
 
 Once you have created your bot within Discord and invited it to your server, you can
 then set up and run the bot itself:
@@ -26,7 +27,9 @@ then set up and run the bot itself:
 3. Install bot dependencies by running `npm install` from a command prompt
    within the bot directory.
 4. Create your .env file by running `cp .env.ex .env`.
-5. Edit your .env file with the bot's token, found in the Discord Developer Portal.
-6. Run the bot with `npm start`.
+5. Edit your .env file with your bot's token and the IDs of your admin channel and role. Any channels which the bot
+should not respond in can also be listed as comma-separated IDs.
+6. Add your server's ID to `commandGuilds` in `purplet.config.ts`.
+7. Run the bot with `npm start`.
 
 [1]: https://discord.gg/cxBrH93Jtb

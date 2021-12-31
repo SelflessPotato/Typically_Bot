@@ -8,9 +8,14 @@
     "build": "purplet build"
   },
   "dependencies": {
-    "purplet": "^1.1.2"
+    "purplet": "^1.1.2",
+    "sequelize": "^6.12.4",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
+    "@types/node": "^17.0.5",
+    "@types/sqlite3": "^3.1.8",
+    "@types/validator": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",

@@ -5,6 +5,9 @@ export default defineConfig({
     clientOptions: {
       intents: ['GUILD_MESSAGES'],
     },
+    commandGuilds: [
+      
+    ]
   },
   handlers: [
     new OnEventHandler(),
