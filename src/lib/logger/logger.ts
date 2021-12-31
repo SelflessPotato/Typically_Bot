@@ -2,10 +2,6 @@ import { Snowflake } from 'discord-api-types';
 import { Client, TextChannel } from 'discord.js';
 import stripAnsi from 'strip-ansi';
 
-const _log = console.log;
-const _error = console.error;
-const _debug = console.debug;
-
 enum LogLevel {
   Log = 'LOG',
   Error = 'ERROR',
@@ -13,10 +9,14 @@ enum LogLevel {
 }
 
 export default class Logger {
-  private client: Client;
-  private channel: Snowflake;
+  private oldLog?: typeof console.log;
+  private oldError?: typeof console.error;
+  private oldDebug?: typeof console.debug;
 
-  constructor(client: Client, channelId: Snowflake) {
+  private client: Client;
+  private channel?: Snowflake;
+
+  constructor(client: Client, channelId?: Snowflake) {
     this.client = client;
     this.channel = channelId;
     this.log = this.log.bind(this);
@@ -24,10 +24,15 @@ export default class Logger {
     this.debug = this.debug.bind(this);
   }
 
-  replaceConsole() {
-    if (console.log !== _log) {
+  init() {
+    // refuse to replace console if it's already been replaced
+    if (!console.log.toString().endsWith('{ [native code] }')) {
       throw new Error('Another logger has already replaced the console.');
     }
+
+    this.oldLog = console.log;
+    this.oldError = console.error;
+    this.oldDebug = console.debug;
 
     console.log = this.log;
     console.error = this.error;
@@ -35,9 +40,14 @@ export default class Logger {
   }
 
   cleanup() {
-    console.log = _log;
-    console.error = _error;
-    console.debug = _debug;
+    if (!this.oldLog) {
+      return;
+    }
+
+    console.log = this.oldLog;
+    // These two have non-null assertions because theyre always set with .oldLog
+    console.error = this.oldError!;
+    console.debug = this.oldDebug!;
   }
 
   log(text: string) {
@@ -53,6 +63,8 @@ export default class Logger {
   }
 
   send(text: string) {
+    if (!this.channel) return;
+
     (this.client.channels.cache.get(this.channel) as TextChannel).send(text);
   }
 

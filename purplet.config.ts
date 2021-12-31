@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { defineConfig } from 'purplet';
 
 export default defineConfig({
@@ -5,6 +6,8 @@ export default defineConfig({
     clientOptions: {
       intents: ['GUILD_MESSAGES'],
     },
-    commandGuilds: ['741460884307837041'],
+    commandGuilds: process.env.PURPLET_COMMAND_GUILDS
+      ? process.env.PURPLET_COMMAND_GUILDS.split(',')
+      : [],
   },
 });
