@@ -2,6 +2,9 @@ import sequelize from '$lib/db/db';
 import { DataTypes, Model } from 'sequelize';
 
 class Guild extends Model {
+  id!: string;
+  lastsleep!: Date;
+
   updateLastSleep() {
     this.update({ lastsleep: new Date() });
   }
