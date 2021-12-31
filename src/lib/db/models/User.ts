@@ -2,6 +2,9 @@ import sequelize from '$lib/db/db';
 import { DataTypes, Model } from 'sequelize';
 
 class User extends Model {
+  id!: string;
+  sleepcount!: number;
+
   incrementSleepCount() {
     this.update({ sleepcount: this.sleepcount + 1 });
   }

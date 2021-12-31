@@ -1,7 +1,10 @@
 import sequelize from '$lib/db/db';
 import { DataTypes, Model } from 'sequelize';
 
-class Saying extends Model {}
+class Saying extends Model {
+  id!: string;
+  message!: string;
+}
 
 Saying.init(
   {
