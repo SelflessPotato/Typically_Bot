@@ -27,9 +27,7 @@ then set up and run the bot itself:
 3. Install bot dependencies by running `npm install` from a command prompt
    within the bot directory.
 4. Create your .env file by running `cp .env.ex .env`.
-5. Edit your .env file with your bot's token and the IDs of your admin channel and role. Any channels which the bot
-   should not respond in can also be listed as comma-separated IDs.
-6. Add your server's ID to `commandGuilds` in `purplet.config.ts`.
-7. Run the bot with `npm start`.
+5. Edit your .env file with your bot's token and the IDs of your server(s), admin channel, and admin role. Any channels which the bot should not respond in can also be listed as comma-separated IDs.
+6. Run the bot with `npm start`.
 
 [1]: https://discord.gg/cxBrH93Jtb

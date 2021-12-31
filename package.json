@@ -8,9 +8,11 @@
     "build": "purplet build"
   },
   "dependencies": {
-    "purplet": "^1.1.2",
+    "dotenv": "^10.0.0",
+    "purplet": "^1.2.0",
     "sequelize": "^6.12.4",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^4.2.0",
+    "strip-ansi": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.5",
