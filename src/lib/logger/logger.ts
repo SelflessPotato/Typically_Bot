@@ -1,6 +1,10 @@
 import { Snowflake } from 'discord-api-types';
 import { Client, TextChannel } from 'discord.js';
 
+const _log = console.log;
+const _error = console.error;
+const _debug = console.debug;
+
 enum LogLevel {
   Log = 'LOG',
   Error = 'ERROR',
@@ -20,9 +24,19 @@ export default class Logger {
   }
 
   replaceConsole() {
+    if (console.log !== _log) {
+      throw new Error('Another logger has already replaced the console.');
+    }
+
     console.log = this.log;
     console.error = this.error;
     console.debug = this.debug;
+  }
+
+  cleanup() {
+    console.log = _log;
+    console.error = _error;
+    console.debug = _debug;
   }
 
   log(text: string) {

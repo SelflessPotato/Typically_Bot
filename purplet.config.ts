@@ -1,17 +1,10 @@
-import { ChatCommandHandler, defineConfig, OnEventHandler, TextCommandHandler } from 'purplet';
+import { defineConfig } from 'purplet';
 
 export default defineConfig({
   discord: {
     clientOptions: {
       intents: ['GUILD_MESSAGES'],
     },
-    commandGuilds: [],
+    commandGuilds: ['741460884307837041'],
   },
-  handlers: [
-    new OnEventHandler(),
-    new ChatCommandHandler(),
-    new TextCommandHandler({
-      prefix: '.',
-    }),
-  ],
 });
