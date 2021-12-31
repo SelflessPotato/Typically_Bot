@@ -1,5 +1,6 @@
 import { Snowflake } from 'discord-api-types';
 import { Client, TextChannel } from 'discord.js';
+import stripAnsi from 'strip-ansi';
 
 const _log = console.log;
 const _error = console.error;
@@ -57,6 +58,6 @@ export default class Logger {
 
   private static formatText(text: string, level: LogLevel, rolePing?: Snowflake): string {
     const date = new Date().toISOString();
-    return `${rolePing ? `<@&${rolePing}>\n` : ''}**[${date}]** ${level}: ${text}`;
+    return `${rolePing ? `<@&${rolePing}>\n` : ''}**[${date}]** ${level}: ${stripAnsi(text)}`;
   }
 }

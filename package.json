@@ -10,7 +10,8 @@
   "dependencies": {
     "purplet": "^1.2.0",
     "sequelize": "^6.12.4",
-    "sqlite3": "^4.2.0"
+    "sqlite3": "^4.2.0",
+    "strip-ansi": "^7.0.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.5",
