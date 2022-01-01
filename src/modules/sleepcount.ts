@@ -2,7 +2,7 @@ import { getUser } from '$lib/db/db-utils';
 import { ChatCommand, OptionBuilder } from 'purplet';
 
 export default ChatCommand({
-  name: 'sleepcount',
+  name: 'sleep count',
   description: 'Get the number of times a user has mentioned the myth',
   options: new OptionBuilder().user('user', 'Get the myth count for this user.'),
   handle(options) {
