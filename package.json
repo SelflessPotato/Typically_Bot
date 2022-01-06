@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "purplet": "^1.2.0",
+    "purplet": "^1.2.1",
     "sequelize": "^6.12.4",
     "sqlite3": "^4.2.0",
     "strip-ansi": "^7.0.1"

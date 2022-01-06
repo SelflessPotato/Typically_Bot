@@ -34,9 +34,18 @@ export default class Logger {
     this.oldError = console.error;
     this.oldDebug = console.debug;
 
-    console.log = this.log;
-    console.error = this.error;
-    console.debug = this.debug;
+    console.log = (...args) => {
+      this.oldLog!(...args);
+      this.log(String(args));
+    };
+    console.error = (...args) => {
+      this.oldLog!(...args);
+      this.error(String(args));
+    };
+    console.debug = (...args) => {
+      this.oldLog!(...args);
+      this.debug(String(args));
+    };
   }
 
   cleanup() {
