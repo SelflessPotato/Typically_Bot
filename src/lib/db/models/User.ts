@@ -6,7 +6,6 @@ class User extends Model {
   public declare sleepcount: number;
 
   incrementSleepCount() {
-    console.log('incrementing sleep count' + this.sleepcount);
     this.update({ sleepcount: this.sleepcount + 1 });
   }
 }
